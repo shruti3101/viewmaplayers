@@ -1,9 +1,9 @@
 body {
-	background-color: #f7f7f7;
+	background-color: #ffffff;
 }
 
 h1 {
-	color: #668ba4;
+	color: #54A353;
 	text-align: center;
 	font-family: Helvetica;
 	font-size: 54;
@@ -18,23 +18,23 @@ h2 {
 }
 
 h3 {
-	text-align: center;
+	text-align: left;
 	font-family: Helvetica;
 }
 
 
 a:link, a:visited {
-	background-color: #668ba4;
+	background-color: #ffffff;
 	padding: 10px 10px;
 	border-radius: 10px;
 	text-decoration: none;
 	text-align: center;
 	font-family: Helvetica;
-	color: white;
+	color: black;
 }
 a:hover {
 	background-color: white;
-	color: #668ba4;
+	color: #54A353;
 }
 
 #circle {
