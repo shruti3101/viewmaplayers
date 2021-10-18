@@ -35,7 +35,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[35.766187314700446,-78.78598813344516],[35.78471926064192,-78.75528227620703]]);
+        }).fitBounds([[35.7664974126434,-78.8147481774321],[35.80356130452641,-78.75333646295572]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -93,7 +93,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(151,199,96,1.0)',
+                fillColor: 'rgba(151,199,96,0.5)',
                 interactive: true,
             }
                     break;
@@ -108,7 +108,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(106,180,147,1.0)',
+                fillColor: 'rgba(106,180,147,0.5)',
                 interactive: true,
             }
                     break;
@@ -123,7 +123,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(51,145,61,1.0)',
+                fillColor: 'rgba(51,145,61,0.5)',
                 interactive: true,
             }
                     break;
@@ -138,7 +138,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(146,228,102,1.0)',
+                fillColor: 'rgba(146,228,102,0.5)',
                 interactive: true,
             }
                     break;
@@ -195,7 +195,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
+                fillColor: 'rgba(215,25,28,0.5)',
                 interactive: true,
             }
                     break;
@@ -210,7 +210,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(254,201,128,1.0)',
+                fillColor: 'rgba(254,201,128,0.5)',
                 interactive: true,
             }
                     break;
@@ -225,7 +225,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(199,232,173,1.0)',
+                fillColor: 'rgba(199,232,173,0.5)',
                 interactive: true,
             }
                     break;
@@ -240,7 +240,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(121,226,137,1.0)',
+                fillColor: 'rgba(121,226,137,0.5)',
                 interactive: true,
             }
                     break;
@@ -260,18 +260,6 @@
         });
         bounds_group.addLayer(layer_Cary_RiverStreamBuffer_2);
         map.addLayer(layer_Cary_RiverStreamBuffer_2);
-        map.on("zoomend", function(e) {
-            if (map.getZoom() <= 19 && map.getZoom() >= 8) {
-                map.addLayer(layer_Cary_RiverStreamBuffer_2);
-            } else if (map.getZoom() > 19 || map.getZoom() < 8) {
-                map.removeLayer(layer_Cary_RiverStreamBuffer_2);
-            }
-        });
-            if (map.getZoom() <= 19 && map.getZoom() >= 8) {
-                map.addLayer(layer_Cary_RiverStreamBuffer_2);
-            } else if (map.getZoom() > 19 || map.getZoom() < 8) {
-                map.removeLayer(layer_Cary_RiverStreamBuffer_2);
-            }
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
