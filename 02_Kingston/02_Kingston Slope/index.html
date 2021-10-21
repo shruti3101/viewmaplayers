@@ -35,10 +35,11 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="data/ParcelSlope_1.js"></script>
+        <script src="data/CityofKingston_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[41.90117267700168,-74.05086074832514],[41.95222681850739,-73.95558163386723]]);
+        }).fitBounds([[41.91269356040853,-74.02562797256593],[41.93822196001314,-73.97782691728229]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -97,14 +98,14 @@
                 return {
                 pane: 'pane_ParcelSlope_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.02)',
+                color: 'rgba(72,70,71,0.06999999999999999)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,245,249,0.85)',
+                fillColor: 'rgba(241,241,241,0.85)',
                 interactive: true,
             }
             }
@@ -153,6 +154,89 @@
         });
         bounds_group.addLayer(layer_ParcelSlope_1);
         map.addLayer(layer_ParcelSlope_1);
+        function pop_CityofKingston_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MUNI_TYPE'] !== null ? autolinker.link(feature.properties['MUNI_TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GNIS_ID'] !== null ? autolinker.link(feature.properties['GNIS_ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['POP1990'] !== null ? autolinker.link(feature.properties['POP1990'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['POP2000'] !== null ? autolinker.link(feature.properties['POP2000'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['POP2010'] !== null ? autolinker.link(feature.properties['POP2010'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DOS_LL'] !== null ? autolinker.link(feature.properties['DOS_LL'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DOS_LL_DAT'] !== null ? autolinker.link(feature.properties['DOS_LL_DAT'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MAP_SYMBOL'] !== null ? autolinker.link(feature.properties['MAP_SYMBOL'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DATEMOD'] !== null ? autolinker.link(feature.properties['DATEMOD'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['COUNTY'] !== null ? autolinker.link(feature.properties['COUNTY'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SWIS'] !== null ? autolinker.link(feature.properties['SWIS'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CALC_SqMi'] !== null ? autolinker.link(feature.properties['CALC_SqMi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CityofKingston_2_0() {
+            return {
+                pane: 'pane_CityofKingston_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '1,5',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,0.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CityofKingston_2');
+        map.getPane('pane_CityofKingston_2').style.zIndex = 402;
+        map.getPane('pane_CityofKingston_2').style['mix-blend-mode'] = 'normal';
+        var layer_CityofKingston_2 = new L.geoJson(json_CityofKingston_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CityofKingston_2',
+            layerName: 'layer_CityofKingston_2',
+            pane: 'pane_CityofKingston_2',
+            onEachFeature: pop_CityofKingston_2,
+            style: style_CityofKingston_2_0,
+        });
+        bounds_group.addLayer(layer_CityofKingston_2);
+        map.addLayer(layer_CityofKingston_2);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -174,7 +258,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Parcel Slope<br /><table><tr><td style="text-align: center;"><img src="legend/ParcelSlope_1_080.png" /></td><td>0 - 8</td></tr><tr><td style="text-align: center;"><img src="legend/ParcelSlope_1_8151.png" /></td><td>8 - 15</td></tr><tr><td style="text-align: center;"><img src="legend/ParcelSlope_1_15372.png" /></td><td>15 - 37</td></tr></table>': layer_ParcelSlope_1,"CartoDb Positron": layer_CartoDbPositron_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/CityofKingston_2.png" /> City of Kingston': layer_CityofKingston_2,'Parcel Slope<br /><table><tr><td style="text-align: center;"><img src="legend/ParcelSlope_1_080.png" /></td><td>0 - 8</td></tr><tr><td style="text-align: center;"><img src="legend/ParcelSlope_1_8151.png" /></td><td>8 - 15</td></tr><tr><td style="text-align: center;"><img src="legend/ParcelSlope_1_15372.png" /></td><td>15 - 37</td></tr></table>': layer_ParcelSlope_1,"CartoDb Positron": layer_CartoDbPositron_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
