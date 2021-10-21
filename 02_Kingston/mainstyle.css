@@ -1,0 +1,50 @@
+body {
+	background-color: #ffffff;
+}
+
+h1 {
+	color: #54A353;
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 54;
+	letter-spacing: 3px;
+
+}
+
+h2 {
+	text-align: center;
+	font-family: Helvetica;
+	letter-spacing: 2px;
+}
+
+h3 {
+	text-align: left;
+	font-family: Helvetica;
+}
+
+
+a:link, a:visited {
+	background-color: #ffffff;
+	padding: 10px 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	text-align: center;
+	font-family: Helvetica;
+	color: black;
+}
+a:hover {
+	background-color: white;
+	color: #54A353;
+}
+
+#circle {
+	display:inline;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	color: white;
+}
+
+.center {
+	text-align:center;
+}
